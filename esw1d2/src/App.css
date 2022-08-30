@@ -1,0 +1,13 @@
+.card{
+  height: 60vh;
+
+}
+.card-img{
+  height: 63%;
+}
+.card-title{
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+}
