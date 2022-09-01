@@ -7,18 +7,19 @@ class AddComment extends Component {
         comment: {
             rate: 5,
             text: '',
-            elementId: ''
+            elementId: this.props.asin
         }
     }
 
     fetchCommentsPush = async (e) => {
         e.preventDefault()
-        this.hendleChange('elementId', this.props.asin)
         try {
-            let response = await fetch("https://striveschool-api.herokuapp.com/api/comments/", {
+            let response = await fetch("https://striveschool-api.herokuapp.com/api/comments/",  {
+                method: 'POST',
                 headers: {
                     "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzEwYjRkMjVlODE3MTAwMTU1YjM1M2IiLCJpYXQiOjE2NjIwMzkyNTAsImV4cCI6MTY2MzI0ODg1MH0.KxUdxQj1M_ncn-UyXnGwGhNU3o6UaXGHNlrAEH8Kocg"
-                }
+                },
+                body: JSON.stringify(this.state.comment)
             })
 
             if (response.ok) {
