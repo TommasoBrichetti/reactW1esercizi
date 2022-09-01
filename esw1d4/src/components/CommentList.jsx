@@ -5,7 +5,7 @@ class CommentList extends Component{
 
     render(){
         return(
-            <ListGroup.Item> {this.props.rate} - {this.props.comment}</ListGroup.Item>
+            <ListGroup.Item className="text-dark"> {this.props.rate} - {this.props.text}</ListGroup.Item>
         )
     }   
 }

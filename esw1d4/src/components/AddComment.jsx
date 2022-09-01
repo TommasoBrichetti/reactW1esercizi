@@ -4,7 +4,7 @@ import { Col, Container, Row, Form, Button } from "react-bootstrap";
 class AddComment extends Component {
 
     state = {
-        commet: {
+        comment: {
             rate: 5,
             text: '',
             elementId: ''
@@ -23,7 +23,7 @@ class AddComment extends Component {
             if (response.ok) {
                 console.log('nice');
                 this.setState({
-                    commet: {
+                    comment: {
                         rate: 5,
                         text: '',
                         elementId: ''
@@ -53,7 +53,7 @@ class AddComment extends Component {
                 <Form.Group controlId="exampleForm.ControlSelect1">
                     <Form.Label>Example select</Form.Label>
                     <Form.Control as="select" 
-                    value={this.state.commet.rate} 
+                    value={this.state.comment.rate} 
                     onChange={(e)=>{
                         this.hendleChange('rate', e.target.value)
                     }
@@ -69,7 +69,7 @@ class AddComment extends Component {
                 <Form.Group controlId="exampleForm.ControlTextarea1">
                     <Form.Label>Example textarea</Form.Label>
                     <Form.Control as="textarea" rows={3} 
-                    value={this.state.commet.text} 
+                    value={this.state.comment.text} 
                     onChange={(e)=>{
                         this.hendleChange('text', e.target.value)
                     }
