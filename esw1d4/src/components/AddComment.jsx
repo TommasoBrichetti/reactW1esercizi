@@ -11,7 +11,8 @@ class AddComment extends Component {
         }
     }
 
-    fetchCommentsPush = async () => {
+    fetchCommentsPush = async (e) => {
+        e.preventDefault()
         this.hendleChange('elementId', this.props.asin)
         try {
             let response = await fetch("https://striveschool-api.herokuapp.com/api/comments/", {
